@@ -36,6 +36,19 @@ python infer.py \
 https://github.com/user-attachments/assets/30f53d32-efc3-4dde-8d58-68ecf9c8ec19
 
 
+```bash
+python infer.py \
+    --stage1_model m-a-p/YuE-s1-7B-anneal-zh-cot \
+    --stage2_model m-a-p/YuE-s2-1B-general \
+    --genre_txt genre.txt \
+    --lyrics_txt lyrics_zh.txt \
+    --run_n_segments 2 \
+    --stage2_batch_size 4 \
+    --output_dir ./output \
+    --cuda_idx 0 \
+    --max_new_tokens 3000
+```
+
 
 ```bash
 cd ..
