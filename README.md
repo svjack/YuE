@@ -27,7 +27,9 @@ python infer.py \
     --stage2_batch_size 4 \
     --output_dir ./output \
     --cuda_idx 0 \
-    --max_new_tokens 3000 
+    --max_new_tokens 3000
+
+# ffmpeg -i output/cot_inspiring-female-uplifting-pop-airy-vocal-electronic-bright-vocal-vocal_tp0@93_T100_rp102_maxtk3000_mixed_f5e0c515-f10c-4a13-a47d-76c6cc1712fd.mp3' -c:v libx264 -c:a aac -strict experimental output/cot_inspiring-female-uplifting-pop-airy-vocal-electronic-bright-vocal-vocal_tp0@93__T1@0_rp1@2_maxtk3000_mixed_{5e0c515-f10c-4a13-a47d-76c6cc1712fd.mp4
 ```
 
 
