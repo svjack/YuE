@@ -227,6 +227,43 @@ print("所有文件生成完成！")
 
 ```
 
+```bash
+#!/bin/bash
+
+# 创建输出目录
+mkdir -p ./zh_output_song
+
+# 遍历 lyrics_*.txt 文件
+for lyrics_file in lyrics_*.txt; do
+    # 复制当前 lyrics 文件到 lyrics_zh.txt
+    cp "$lyrics_file" lyrics_zh.txt
+    
+    # 提取文件名（不含扩展名），用于命名输出目录
+    output_dir_name=$(basename "$lyrics_file" .txt)
+    output_dir=./zh_output_song/"$output_dir_name"
+    
+    echo "Processing $lyrics_file..."
+    echo "Output directory: $output_dir"
+    
+    # 创建输出目录
+    mkdir -p "$output_dir"
+    
+    python infer.py \
+        --stage1_model m-a-p/YuE-s1-7B-anneal-zh-cot \
+        --stage2_model m-a-p/YuE-s2-1B-general \
+        --genre_txt genre.txt \
+        --lyrics_txt lyrics_zh.txt \
+        --run_n_segments 2 \
+        --stage2_batch_size 4 \
+        --output_dir "$output_dir" \
+        --cuda_idx 0 \
+        --max_new_tokens 3000 \
+        --prompt_end_time 360
+done
+
+echo "Processing completed!"
+```
+
 
 ```bash
 cd ..
