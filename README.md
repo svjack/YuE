@@ -44,7 +44,7 @@ python infer.py \
     --lyrics_txt lyrics_zh.txt \
     --run_n_segments 2 \
     --stage2_batch_size 4 \
-    --output_dir ./output \
+    --output_dir ./zh_output \
     --cuda_idx 0 \
     --max_new_tokens 3000
 ```
