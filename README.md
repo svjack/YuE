@@ -48,6 +48,17 @@ python infer.py \
     --cuda_idx 0 \
     --max_new_tokens 3000
 
+python infer.py \
+    --stage1_model m-a-p/YuE-s1-7B-anneal-zh-cot \
+    --stage2_model m-a-p/YuE-s2-1B-general \
+    --genre_txt genre.txt \
+    --lyrics_txt lyrics_zh.txt \
+    --run_n_segments 2 \
+    --stage2_batch_size 4 \
+    --output_dir ./zh_output_30000 \
+    --cuda_idx 0 \
+    --max_new_tokens 30000
+
 # ffmpeg -i cot_zh_demo.mp3-codec:a libmp3lame -b:a 192k -f mp4 -vn cot_zh_demo.mp4
 ```
 
