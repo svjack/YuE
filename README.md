@@ -48,7 +48,7 @@ python infer.py \
     --cuda_idx 0 \
     --max_new_tokens 3000
 
-#
+# ffmpeg -i cot_zh_demo.mp3-codec:a libmp3lame -b:a 192k -f mp4 -vn cot_zh_demo.mp4
 ```
 
 ```txt
