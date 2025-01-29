@@ -47,7 +47,36 @@ python infer.py \
     --output_dir ./zh_output \
     --cuda_idx 0 \
     --max_new_tokens 3000
+
+#
 ```
+
+```txt
+[verse]
+注目夕阳晚，彩霞满天边
+思念绕心间，无法抗拒的情感
+明知曾令你失望，过错在眼前
+此刻归来只为，修补水痕涟涟
+
+[chorus]
+无论你选择何路，我在身后紧守护
+追逐你的梦想，握住希望与光
+此情此意此刻，难以抵拒
+我已决绝，不应退缩
+深知你无法抵抗，我不会退缩
+
+[verse]
+有人笑我愚，为爱独自追逐
+这般的深情，唯你我心照不误
+心之所向，唯你一人
+不愿你远去，我早已心有所属
+```
+
+
+
+https://github.com/user-attachments/assets/42822b4d-2f7d-4380-8ecf-4d46d3c99dfb
+
+
 
 
 ```bash
