@@ -2,6 +2,24 @@
     <img src="./assets/logo/白底.png" width="400" />
 </p>
 
+```bash
+sudo apt-get update && sudo apt-get install cbm ffmpeg git-lfs
+
+conda create -n yue python=3.10 # Python >=3.8 is recommended.
+conda activate yue
+pip install ipykernel
+python -m ipykernel install --user --name yue --display-name "yue"
+
+# install cuda >= 11.8
+#conda install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvidia
+
+git clone https://huggingface.co/spaces/svjack/YuE && cd YuE
+pip install -r requirements.txt
+pip install flash-attn --no-build-isolation
+
+python app.py
+```
+
 <p align="center">
     <a href="https://map-yue.github.io/">Demo 🎶</a> &nbsp;|&nbsp; 📑 <a href="">Paper (coming soon)</a>
     <br>
