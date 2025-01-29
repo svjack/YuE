@@ -447,6 +447,7 @@ if data:  # 确保数据列表不为空
 else:
     print("没有有效的数据可以生成数据集。")
 
+dataset.push_to_hub("svjack/YuE-Song-Ci-9")
 ```
 
 
