@@ -383,6 +383,72 @@ done
 echo "Processing completed!"
 ```
 
+```python
+import os
+from datasets import Dataset, Audio
+
+# 定义歌词文件路径和音乐文件输出路径
+lyrics_dir = "."  # 歌词文件所在的目录
+music_dir = "./zh_output_song_short"  # 音乐文件所在的目录
+
+# 初始化数据集列表
+data = []
+
+# 遍历歌词文件
+for lyrics_file in os.listdir(lyrics_dir):
+    if lyrics_file.startswith("lyrics_") and lyrics_file.endswith(".txt") and "zh" not in lyrics_file:
+        # 提取作者和词牌名
+        filename = lyrics_file[len("lyrics_"):-len(".txt")]
+        author, title = filename.split("_", 1)
+        
+        # 读取歌词内容
+        with open(os.path.join(lyrics_dir, lyrics_file), "r", encoding="utf-8") as f:
+            lyrics_content = f.read()
+        
+        # 构建音乐文件路径
+        music_subdir = os.path.join(music_dir, f"lyrics_{filename}")
+        
+        # 检查音乐子目录是否存在
+        if os.path.exists(music_subdir):
+            # 查找音乐文件
+            music_files = [f for f in os.listdir(music_subdir) if f.endswith(".wav") or f.endswith(".mp3")]
+            
+            # 如果找到音乐文件，则添加到数据集
+            if music_files:
+                music_file = os.path.join(music_subdir, music_files[0])
+                # 使用 Audio 类型保存音频文件路径
+                #music_content = {"path": music_file, "array": None, "sampling_rate": None}
+                
+                # 添加到数据集
+                data.append({
+                    "author": author,
+                    "title": title,
+                    "lyrics": lyrics_content,
+                    "music": music_file
+                })
+        else:
+            print(f"音乐子目录不存在: {music_subdir}")
+
+# 创建 Hugging Face Dataset
+if data:  # 确保数据列表不为空
+    dataset = Dataset.from_dict({
+        "author": [item["author"] for item in data],
+        "title": [item["title"] for item in data],
+        "lyrics": [item["lyrics"] for item in data],
+        "music": [item["music"] for item in data]
+    })
+
+    # 将 music 列转换为 Audio 类型
+    dataset = dataset.cast_column("music", Audio())
+
+    # 保存数据集到磁盘
+    dataset.save_to_disk("./lyrics_music_dataset")
+    print("数据集已保存到 ./lyrics_music_dataset")
+else:
+    print("没有有效的数据可以生成数据集。")
+
+```
+
 
 ```bash
 cd ..
