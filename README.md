@@ -28,7 +28,14 @@ python infer.py \
     --output_dir ./output \
     --cuda_idx 0 \
     --max_new_tokens 3000 
+```
 
+
+https://github.com/user-attachments/assets/30f53d32-efc3-4dde-8d58-68ecf9c8ec19
+
+
+
+```bash
 cd ..
 python app.py
 ```
