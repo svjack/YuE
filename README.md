@@ -55,9 +55,10 @@ python infer.py \
     --lyrics_txt lyrics_zh.txt \
     --run_n_segments 2 \
     --stage2_batch_size 4 \
-    --output_dir ./zh_output_30000 \
+    --output_dir ./zh_output_new \
     --cuda_idx 0 \
-    --max_new_tokens 30000
+    --max_new_tokens 3000 \
+    --prompt_end_time 360
 
 # ffmpeg -i cot_zh_demo.mp3-codec:a libmp3lame -b:a 192k -f mp4 -vn cot_zh_demo.mp4
 ```
