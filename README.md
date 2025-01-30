@@ -110,6 +110,12 @@ https://github.com/user-attachments/assets/42822b4d-2f7d-4380-8ecf-4d46d3c99dfb
 https://github.com/user-attachments/assets/137e2bd0-7812-471d-bffd-da863a0234a4
 
 
+
+
+https://github.com/user-attachments/assets/300e0554-551f-4ed7-9dad-0cbf48ca9d54
+
+
+
 ```python
 # 定义词数据
 lyrics_data = {
