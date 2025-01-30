@@ -397,7 +397,7 @@ for lyrics_file in lyrics_*.txt; do
         --output_dir "$output_dir" \
         --cuda_idx 0 \
         --max_new_tokens 3000 \
-        --prompt_end_time 3600 \
+        --prompt_end_time 360 \
         
 done
 
