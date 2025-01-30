@@ -17,6 +17,9 @@ git clone https://huggingface.co/spaces/svjack/YuE && cd YuE
 pip install -r requirements.txt
 pip install flash-attn --no-build-isolation
 
+python app.py
+### Ctrl + C
+
 cd inference
 python infer.py \
     --stage1_model m-a-p/YuE-s1-7B-anneal-en-cot \
@@ -460,12 +463,6 @@ else:
     print("没有有效的数据可以生成数据集。")
 
 dataset.push_to_hub("svjack/YuE-Song-Ci-9")
-```
-
-
-```bash
-cd ..
-python app.py
 ```
 
 <p align="center">
