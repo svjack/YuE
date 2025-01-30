@@ -392,7 +392,7 @@ for lyrics_file in lyrics_*.txt; do
         --stage2_model m-a-p/YuE-s2-1B-general \
         --genre_txt genre.txt \
         --lyrics_txt lyrics_zh.txt \
-        --run_n_segments 4 \
+        --run_n_segments 20 \
         --stage2_batch_size 4 \
         --output_dir "$output_dir" \
         --cuda_idx 0 \
